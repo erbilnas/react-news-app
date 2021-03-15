@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { Route, Switch, Redirect } from 'react-router-dom'
+import { NavigationRoute } from './routers/NavigationRoute'
+import routes from './routers/route'
+import NavigationBar from './components/Navbar'
+import Footer from './components/Footer'
+import { ErrorPage } from './pages/ErrorPage'
+
+import './App.css'
 
 function App() {
+  const router = (
+    NavigationRoute.map(({ path, component }, key) => (
+      <Route exact path={path} key={key} component={component} />
+    ))
+  )
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavigationBar />
+      <Switch>
+        {router}
+        <Route exact path={routes.ERROR} component={ErrorPage} />
+        <Redirect from="*" to={routes.ERROR} />
+      </Switch>
+      <Footer />
+
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
