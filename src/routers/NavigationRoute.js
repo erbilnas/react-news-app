@@ -2,6 +2,7 @@ import { LandingPage } from '../pages/LandingPage';
 import NewsHub from '../pages/NewsHub';
 import LoginPage from '../pages/LoginPage';
 import routes from './route';
+import UserProfile from '../pages/UserProfile'
 
 export const NavigationRoute = [
     {
@@ -13,6 +14,11 @@ export const NavigationRoute = [
         name: 'news',
         path: routes.NEWS,
         component: NewsHub,
+    },
+    {
+        name: 'profile',
+        path: routes.PROFILE,
+        component: UserProfile,
     },
     {
         name: 'login',

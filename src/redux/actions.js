@@ -28,6 +28,4 @@ const loginError = (error) => ({
     payload: error,
 })
 
-const actions = { fetchRequest, fetchSuccess, fetchError, loginRequest, loginSuccess, loginError }
-
-export default actions
+export default { fetchRequest, fetchSuccess, fetchError, loginRequest, loginSuccess, loginError }

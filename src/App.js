@@ -21,10 +21,9 @@ function App() {
       <Switch>
         {router}
         <Route exact path={routes.ERROR} component={ErrorPage} />
-        <Redirect from="*" to={routes.ERROR} />
+        <Redirect from="*" to={routes.HOME} />
       </Switch>
       <Footer />
-
     </div>
   )
 }

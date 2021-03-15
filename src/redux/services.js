@@ -42,6 +42,4 @@ const login = (mail, password) => (dispatch) => {
         })
 }
 
-const services = { fetchNews, login }
-
-export default services
+export default { fetchNews, login }
